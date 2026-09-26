@@ -1,0 +1,17 @@
+install:
+========
+1. Install TypeScript globally using Node's npm package manager (requires Node.js and npm)
+sudo npm install -g typescript
+
+update:
+=======
+1. Upgrade the globally installed TypeScript compiler to the latest version
+sudo npm install -g typescript@latest
+
+remove completely:
+==================
+1. Uninstall global TypeScript binaries and compiler libraries
+sudo npm uninstall -g typescript && \
+
+2. Wipe out local TypeScript cache and compiler configuration stores
+rm -rf ~/.cache/typescript

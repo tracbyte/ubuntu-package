@@ -1,0 +1,35 @@
+install:
+========
+1. Update the package list and install prerequisites
+sudo apt update && sudo apt install curl -y && \
+
+2. Add Opera's official security signing key
+curl -fsSL https://deb.opera.com/archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/opera-browser.gpg > /dev/null && \
+
+3. Add the official Opera repository to your system sources
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/opera-browser.gpg] https://deb.opera.com/opera-stable/ stable non-free" | sudo tee /etc/apt/sources.list.d/opera-stable.list && \
+
+4. Update package lists again and install the stable version of Opera
+sudo apt update && sudo apt install opera-stable -y
+
+update:
+=======
+1. Refresh system repository listings and upgrade the standard Opera browser
+sudo apt update && sudo apt install --only-upgrade opera-stable -y
+
+remove completely:
+==================
+1. Uninstall the Opera application and system configurations
+sudo apt purge opera-stable -y && \
+
+2. Remove the repository setup and signing keys
+sudo rm -f /etc/apt/sources.list.d/opera-stable.list && \
+sudo rm -f /usr/share/keyrings/opera-browser.gpg && \
+
+3. Clean up leftover system packages and refresh package lists
+sudo apt update && sudo apt autoremove -y && \
+
+4. Wipe out all user profiles, customized workspaces, history, and cache files
+rm -rf ~/.config/opera && \
+rm -rf ~/.cache/opera
+

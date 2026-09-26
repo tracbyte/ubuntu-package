@@ -1,0 +1,15 @@
+install:
+========
+1. Execute the built-in easter egg script inside Python to open the web comic
+python3 -c "import antigravity"
+
+update:
+=======
+1. Antigravity is a static, built-in Python module easter egg and cannot be updated
+echo "No updates required."
+
+remove completely:
+==================
+1. Close the web browser tab that automatically opened when you imported the module
+echo "No files were installed. Antigravity is a built-in Python easter egg module!"
+

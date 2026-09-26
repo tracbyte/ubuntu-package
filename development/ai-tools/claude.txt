@@ -1,0 +1,18 @@
+install:
+========
+1. Update system tools and install the node package manager to deploy the official Anthropic Claude SDK
+sudo apt update && sudo apt install nodejs npm -y && npm install @anthropic-ai/sdk
+
+update:
+=======
+1. Run this inside your specific project folder to upgrade the local Anthropic Claude project dependency library
+npm update @anthropic-ai/sdk
+
+remove completely:
+==================
+1. Delete the local node modules directory containing the Anthropic Claude SDK
+npm uninstall @anthropic-ai/sdk && \
+
+2. Wipe out any custom local project configuration scripts or keys linked to Claude
+rm -rf ~/.config/claude
+

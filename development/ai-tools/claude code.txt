@@ -1,0 +1,19 @@
+install:
+========
+1. Update system packages, install Node.js environment tools, and deploy Claude Code globally via npm
+sudo apt update && sudo apt install nodejs npm -y && sudo npm install -g @anthropic-ai/claude-code
+
+update:
+=======
+1. Fetch and install the newest global update for Claude Code from the Node registry
+sudo npm update -g @anthropic-ai/claude-code
+
+remove completely:
+==================
+1. Uninstall the global Claude Code package package from the Node module registry
+sudo npm uninstall -g @anthropic-ai/claude-code && \
+
+2. Wipe out the Anthropic CLI local authentication profiles, history logs, and cache indexes
+rm -rf ~/.config/claude-code && \
+rm -rf ~/.cache/claude-code
+

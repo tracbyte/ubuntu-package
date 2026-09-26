@@ -1,0 +1,22 @@
+install:
+========
+1. Install prerequisite build utilities and fetch the official Rust installer script via rustup
+sudo apt update && sudo apt install build-essential curl -y && \
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+update:
+=======
+1. Upgrade Rust compilers, standard libraries, and Cargo tools via rustup
+source "$HOME/.cargo/env" && rustup update
+
+remove completely:
+==================
+1. Uninstall the Rust toolchain, Cargo package manager, and rustup environment
+rustup self uninstall -y && \
+
+2. Clean up system package dependencies installed for build tools
+sudo apt autoremove -y && \
+
+3. Wipe out lingering Cargo configurations, target caches, and rustup directories
+rm -rf ~/.cargo && \
+rm -rf ~/.rustup

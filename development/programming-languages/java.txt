@@ -1,0 +1,21 @@
+install:
+========
+1. Update the package list and install the latest official LTS OpenJDK development kit and runtime environment
+sudo apt update && sudo apt install default-jdk default-jre -y
+
+update:
+=======
+1. Refresh system repository listings and upgrade the OpenJDK development kit and runtime
+sudo apt update && sudo apt install --only-upgrade default-jdk default-jre -y
+
+remove completely:
+==================
+1. Uninstall all OpenJDK development kits, runtimes, and system configurations
+sudo apt purge default-jdk default-jre openjdk* -y && \
+
+2. Clean up leftover system package dependencies
+sudo apt autoremove -y && \
+
+3. Wipe out hidden Java user preferences and certificate runtime storage keys
+rm -rf ~/.java
+

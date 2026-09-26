@@ -1,0 +1,36 @@
+install:
+========
+1. Completely remove Ubuntu's pre-installed LibreOffice suite to prevent file system conflicts
+sudo apt purge libreoffice* -y && sudo apt autoremove -y && \
+
+2. Download the official, stable Apache OpenOffice Debian package directly from SourceForge
+wget https://sourceforge.net -O openoffice.tar.gz && \
+
+3. Extract the downloaded archive folder to your system downloads
+tar -xvf openoffice.tar.gz && \
+
+4. Navigate into the core package files and install all OpenOffice applications at once
+cd en-US/DEBS && sudo dpkg -i *.deb && \
+
+5. Enter the desktop subdirectory and install the system integrations to place it in your launch menus
+cd desktop-integration && sudo dpkg -i *.deb && \
+
+6. Navigate back out and clean up all temporary download files from your storage drive
+cd ../../../ && rm -rf openoffice.tar.gz en-US
+
+update:
+=======
+1. OpenOffice does not have an update repository. Run the remove script first, change the version number in the install script, and reinstall it manually
+echo "Must be uninstalled and reinstalled manually to update."
+
+remove completely:
+==================
+1. Uninstall all core openoffice application packages from your operating system
+sudo apt purge openoffice* -y && \
+
+2. Clean up any leftover package dependencies and clear out system upgrade trails
+sudo apt autoremove -y && \
+
+3. Wipe out your custom user templates, application profile preferences, styles, and cache folders
+rm -rf ~/.openoffice
+

@@ -1,0 +1,35 @@
+install:
+========
+1. Update the package list and install prerequisites
+sudo apt update && sudo apt install curl lsb-release -y && \
+
+2. Add the official Ungoogled Chromium security signing key
+curl -fsSL https://opensuse.org(lsb_release -rs)/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/ungoogled-chromium.gpg > /dev/null && \
+
+3. Add the official Ungoogled Chromium repository to your system sources
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ungoogled-chromium.gpg] https://opensuse.org(lsb_release -rs)/ /" | sudo tee /etc/apt/sources.list.d/ungoogled-chromium.list && \
+
+4. Update package lists again and install Ungoogled Chromium
+sudo apt update && sudo apt install ungoogled-chromium -y
+
+update:
+=======
+1. Refresh system repository listings and upgrade the Ungoogled Chromium package
+sudo apt update && sudo apt install --only-upgrade ungoogled-chromium -y
+
+remove completely:
+==================
+1. Uninstall the Ungoogled Chromium application and system configurations
+sudo apt purge ungoogled-chromium -y && \
+
+2. Remove the repository setup and signing keys
+sudo rm -f /etc/apt/sources.list.d/ungoogled-chromium.list && \
+sudo rm -f /usr/share/keyrings/ungoogled-chromium.gpg && \
+
+3. Clean up leftover system packages and refresh package lists
+sudo apt update && sudo apt autoremove -y && \
+
+4. Wipe out all user profiles, local data extensions, and cache files
+rm -rf ~/.config/chromium && \
+rm -rf ~/.cache/chromium
+

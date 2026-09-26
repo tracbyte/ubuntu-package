@@ -1,0 +1,35 @@
+install:
+========
+1. Update the package list and install system tools
+sudo apt update && sudo apt install curl lsb-release -y && \
+
+2. Add the official OpenSUSE Pale Moon repository security signing key
+curl -fsSL https://opensuse.org(lsb_release -rs)/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/palemoon.gpg > /dev/null && \
+
+3. Add the Pale Moon repository to your system sources list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/palemoon.gpg] http://opensuse.org(lsb_release -rs)/ /" | sudo tee /etc/apt/sources.list.d/palemoon.list && \
+
+4. Refresh your system packages and install the Pale Moon application
+sudo apt update && sudo apt install palemoon -y
+
+update:
+=======
+1. Refresh system repository listings and upgrade the Pale Moon browser
+sudo apt update && sudo apt install --only-upgrade palemoon -y
+
+remove completely:
+==================
+1. Uninstall the Pale Moon browser software
+sudo apt purge palemoon -y && \
+
+2. Remove the repository setup and security signing keys
+sudo rm -f /etc/apt/sources.list.d/palemoon.list && \
+sudo rm -f /usr/share/keyrings/palemoon.gpg && \
+
+3. Clean up leftover system packages and refresh package lists
+sudo apt update && sudo apt autoremove -y && \
+
+4. Wipe out all user profiles, customized configurations, history, and cache files
+rm -rf ~/.moonchild\ productions && \
+rm -rf ~/.cache/moonchild\ productions
+
