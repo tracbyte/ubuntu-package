@@ -18,6 +18,4 @@ Don't forget to share this and follow [**tracbyte**](https://github.com/tracbyte
 
 Maintained by [**@abuzarshaikhdev**](https://github.com/abuzarshaikhdev) (Owner @ [**TracByte**](https://github.com/tracbyte))
 
----
-
 > **Master today. Track tomorrow!**
