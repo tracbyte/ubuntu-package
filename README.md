@@ -14,9 +14,10 @@ Instead, if you want to add features, fix bugs, or build your own version:
 
 Feel free to `git clone` the repo to check out the commands on your own machine. 
 
-Don't forget to share this and follow [**tracbyte**](https://github.com/tracbyte/tracbyte#-connect-with-me) on all platforms! Happy coding!
+Don't forget to share this and follow [**tracbyte**](https://github.com/tracbyte/tracbyte#-connect-with-me) on all platforms!
 
-Maintained by [**@abuzarshaikhdev**](https://github.com/abuzarshaikhdev) (Owner @ [**TracByte**](https://github.com/tracbyte))
+**Master today. Track tomorrow!**
 
 ___
-**Master today. Track tomorrow!**
+
+Maintained by [**@abuzarshaikhdev**](https://github.com/abuzarshaikhdev) (Owner @ [**TracByte**](https://github.com/tracbyte))
