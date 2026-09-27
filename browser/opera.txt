@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y curl apt-transport-https ca-certificates gnupg
+
+# Add Opera's signing key
+curl -fSsL https://deb.opera.com/archive.key | sudo gpg --dearmor -o /usr/share/keyrings/opera-browser.gpg
+
+# Add the official Opera repository
+echo "deb [signed-by=/usr/share/keyrings/opera-browser.gpg] https://deb.opera.com/opera-stable/ stable non-free" | sudo tee /etc/apt/sources.list.d/opera-stable.list
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Opera
+sudo apt install -y opera-stable
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Opera only
+sudo apt update && sudo apt --only-upgrade install -y opera-stable
+
+clean cache:
+============
+# Remove Opera local cache files
+rm -rf ~/.cache/opera
+
+remove profiles:
+================
+# Remove Opera user profile data and settings
+rm -rf ~/.config/opera
+
+uninstall:
+==========
+# Remove Opera and purge its configuration files
+sudo apt remove --purge -y opera-stable
+
+# Remove the Opera repository source file
+sudo rm -f /etc/apt/sources.list.d/opera-stable.list
+
+# Remove the saved Opera signing key
+sudo rm -f /usr/share/keyrings/opera-browser.gpg
