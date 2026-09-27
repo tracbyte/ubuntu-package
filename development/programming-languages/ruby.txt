@@ -1,0 +1,27 @@
+install:
+========
+# Update package lists and install the Ruby interpreter, core development headers, and build tools
+sudo apt update && sudo apt install ruby-full build-essential -y
+
+update:
+=======
+# Refresh system repository listings and upgrade the Ruby core environment
+sudo apt update && sudo apt install --only-upgrade ruby-full -y
+
+clean cache:
+============
+# Remove bundle caches and gem build caches
+rm -rf ~/.bundle/cache ~/.gem/specs
+
+remove profiles:
+================
+# Wipe out installed user gems, bundle configurations, and Ruby IRB history
+rm -rf ~/.gem ~/.bundle ~/.irb_history
+
+uninstall:
+==========
+# Uninstall Ruby runtime, header files, and build environment dependencies
+sudo apt purge ruby-full ruby -y
+
+# Clean up leftover system package dependencies
+sudo apt autoremove -y

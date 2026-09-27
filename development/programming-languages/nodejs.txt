@@ -1,0 +1,27 @@
+install:
+========
+# Update package lists and install Node.js along with the npm package manager
+sudo apt update && sudo apt install nodejs npm -y
+
+update:
+=======
+# Refresh system repository listings and upgrade Node.js and npm
+sudo apt update && sudo apt install --only-upgrade nodejs npm -y
+
+clean cache:
+============
+# Clear global npm cache
+rm -rf ~/.npm
+
+remove profiles:
+================
+# Wipe out Node command history and configuration store profiles
+rm -rf ~/.node_repl_history ~/.config/configstore
+
+uninstall:
+==========
+# Uninstall Node.js, npm, and system package bindings
+sudo apt purge nodejs npm -y
+
+# Clean up leftover system package dependencies
+sudo apt autoremove -y

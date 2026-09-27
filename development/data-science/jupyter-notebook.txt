@@ -1,0 +1,31 @@
+install:
+========
+# Update package list, install Python environment tools, and install classic Jupyter Notebook
+sudo apt update && sudo apt install -y python3-pip python3-venv
+pip3 install notebook --break-system-packages
+
+# To open Jupyter notebook  use this cmd
+jupyter notebook 
+
+update:
+=======
+# Check and upgrade Jupyter Notebook package via pip manager
+pip3 install --upgrade notebook --break-system-packages
+
+clean cache:
+============
+# Remove Jupyter Notebook local cache and runtime directory
+rm -rf ~/.cache/jupyter ~/.local/share/jupyter/runtime
+
+remove profiles:
+================
+# Remove user configuration files, runtime states, and preferences
+rm -rf ~/.jupyter
+
+uninstall:
+==========
+# Remove Jupyter Notebook package via pip manager
+pip3 uninstall -y notebook --break-system-packages
+
+# Remove user configuration files, runtime states, and local cache
+rm -rf ~/.jupyter ~/.cache/jupyter ~/.local/share/jupyter/runtime

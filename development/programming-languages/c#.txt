@@ -1,0 +1,27 @@
+install:
+========
+# Add the official Microsoft package repository key and install the .NET Core SDK / C# environment
+sudo apt update && sudo apt install -y dotnet-sdk-8.0
+
+update:
+=======
+# Refresh system repository listings and upgrade the .NET SDK and C# runtime
+sudo apt update && sudo apt install --only-upgrade dotnet-sdk-8.0 -y
+
+clean cache:
+============
+# Wipe out local NuGet caches
+rm -rf ~/.nuget
+
+remove profiles:
+================
+# Wipe out user-level .NET tools and telemetry profiles
+rm -rf ~/.dotnet ~/.templateengine
+
+uninstall:
+==========
+# Uninstall .NET SDKs, runtimes, and targeting packs
+sudo apt purge dotnet* aspnetcore* -y
+
+# Clean up leftover system package dependencies
+sudo apt autoremove -y

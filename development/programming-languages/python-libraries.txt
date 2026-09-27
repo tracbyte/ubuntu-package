@@ -1,0 +1,54 @@
+Data Science & Machine Learning:
+================================
+# Install data science and machine learning packages
+pip install numpy pandas matplotlib seaborn scipy scikit-learn statsmodels --break-system-packages
+
+Database & ORM:
+===============
+# Install database drivers and ORM frameworks
+pip install sqlalchemy pymysql psycopg2-binary redis alembic --break-system-packages
+
+File Handling & Office:
+=======================
+# Install image and document processing libraries
+pip install pillow openpyxl python-docx PyPDF2 --break-system-packages
+
+Jupyter:
+========
+# Install JupyterLab and classic Notebook interfaces
+pip install jupyterlab notebook --break-system-packages
+
+Python Core & Utilities:
+=========================
+# Install core Python build tools and utility packages
+pip install pip setuptools wheel python-dotenv click rich pydantic --break-system-packages
+
+Testing & Code Quality:
+=======================
+# Install testing frameworks and code linters
+pip install pytest pytest-cov black flake8 pylint mypy --break-system-packages
+
+Web Development & APIs:
+================       
+# Install web frameworks and API tools
+pip install flask fastapi uvicorn django starlette pydantic-settings --break-system-packages
+
+Web Scraping & Automation:
+===========================
+# Install web scraping and automation libraries
+pip install requests httpx aiohttp beautifulsoup4 lxml selenium playwright --break-system-packages
+
+yt-dlp:
+=======
+# Install media downloading tool
+pip install yt-dlp --break-system-packages
+
+Oneliner Install (Ubuntu Bash):
+===============================
+# Install all primary Python libraries at once
+pip install --upgrade pip setuptools wheel --break-system-packages && pip install numpy pandas matplotlib seaborn scipy scikit-learn statsmodels requests httpx aiohttp beautifulsoup4 lxml selenium playwright flask fastapi uvicorn django starlette pydantic-settings sqlalchemy pymysql psycopg2-binary redis alembic pillow openpyxl python-docx PyPDF2 pytest pytest-cov black flake8 pylint mypy yt-dlp python-dotenv click rich pydantic --break-system-packages
+
+Global Uninstall (Ubuntu Bash):
+===============================
+# Uninstall all user-installed Python pip libraries
+pip freeze | xargs pip uninstall -y
