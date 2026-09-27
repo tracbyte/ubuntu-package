@@ -1,0 +1,39 @@
+install:
+========
+# Download the official, stable Apache OpenOffice Debian package directly from SourceForge
+wget https://sourceforge.net -O openoffice.tar.gz
+
+# Extract the downloaded archive folder
+tar -xvf openoffice.tar.gz
+
+# Navigate into the core package files and install all OpenOffice applications at once
+cd en-US/DEBS && sudo dpkg -i *.deb
+
+# Enter the desktop subdirectory and install system integrations to place it in your launch menus
+cd desktop-integration && sudo dpkg -i *.deb
+
+# Navigate back out and clean up all temporary download files
+cd ../../../ && rm -rf openoffice.tar.gz en-US
+
+update:
+=======
+# OpenOffice does not have an official APT update repository
+echo "Must be uninstalled and reinstalled manually to update."
+
+clean cache:
+============
+# OpenOffice stores runtime files within its profile directory
+echo "No separate cache directory exists."
+
+remove profiles:
+================
+# Wipe out custom user templates, application profile preferences, styles, and settings
+rm -rf ~/.openoffice
+
+uninstall:
+==========
+# Uninstall all core OpenOffice application packages from your operating system
+sudo apt purge openoffice* -y
+
+# Clean up leftover package dependencies
+sudo apt autoremove -y

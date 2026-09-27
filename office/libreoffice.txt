@@ -1,0 +1,36 @@
+install:
+========
+# Update system tools and clean up any contrasting office suite fragments
+sudo apt update && sudo apt purge openoffice* -y && sudo apt autoremove -y
+
+# Add the official LibreOffice Fresh Launchpad repository to your system sources
+sudo add-apt-repository ppa:libreoffice/ppa -y
+
+# Refresh system package data and install the full, updated LibreOffice suite
+sudo apt update && sudo apt install libreoffice -y
+
+update:
+=======
+# Refresh the PPA repository listings and upgrade the entire LibreOffice suite
+sudo apt update && sudo apt install --only-upgrade libreoffice -y
+
+clean cache:
+============
+# Wipe out LibreOffice local cache profiles and recovery files
+rm -rf ~/.cache/libreoffice
+
+remove profiles:
+================
+# Wipe out all user templates, custom styles, history, and user settings
+rm -rf ~/.config/libreoffice
+
+uninstall:
+==========
+# Uninstall the full LibreOffice application stack and its system components
+sudo apt purge libreoffice* -y
+
+# Delete the official LibreOffice Launchpad repository
+sudo rm -f /etc/apt/sources.list.d/libreoffice*.list
+
+# Clean up all leftover system dependencies
+sudo apt update && sudo apt autoremove -y
