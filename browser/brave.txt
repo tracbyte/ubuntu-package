@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y curl apt-transport-https ca-certificates curl gnupg
+
+# Add Brave's signing key
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+
+# Add the official Brave repository
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Brave Browser
+sudo apt install -y brave-browser
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Brave Browser only
+sudo apt update && sudo apt --only-upgrade install -y brave-browser
+
+clean cache:
+============
+# Remove Brave local cache files
+rm -rf ~/.cache/BraveSoftware
+
+remove profiles:
+================
+# Remove Brave user profile data and settings
+rm -rf ~/.config/BraveSoftware
+
+uninstall:
+==========
+# Remove Brave Browser and purge its configuration files
+sudo apt remove --purge -y brave-browser
+
+# Remove the Brave repository source file
+sudo rm -f /etc/apt/sources.list.d/brave-browser-release.list
+
+# Remove the saved Brave signing key
+sudo rm -f /usr/share/keyrings/brave-browser-archive-keyring.gpg
