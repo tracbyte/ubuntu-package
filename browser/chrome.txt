@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y wget apt-transport-https ca-certificates curl gnupg
+
+# Add Google's signing key
+curl -fSsL https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-chrome.gpg
+
+# Add the official Google Chrome repository
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Google Chrome
+sudo apt install -y google-chrome-stable
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Google Chrome only
+sudo apt update && sudo apt --only-upgrade install -y google-chrome-stable
+
+clean cache:
+============
+# Remove Google Chrome local cache files
+rm -rf ~/.cache/google-chrome
+
+remove profiles:
+================
+# Remove Google Chrome user profile data and settings
+rm -rf ~/.config/google-chrome
+
+uninstall:
+==========
+# Remove Google Chrome and purge its configuration files
+sudo apt remove --purge -y google-chrome-stable
+
+# Remove the Google Chrome repository source file
+sudo rm -f /etc/apt/sources.list.d/google-chrome.list
+
+# Remove the saved Google signing key
+sudo rm -f /usr/share/keyrings/google-chrome.gpg
