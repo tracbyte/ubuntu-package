@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y curl apt-transport-https ca-certificates gnupg
+
+# Add Tor Project's signing key
+curl -fSsL https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo gpg --dearmor -o /usr/share/keyrings/tor-archive-keyring.gpg
+
+# Add the official Tor repository
+echo "deb [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org jammy main" | sudo tee /etc/apt/sources.list.d/tor.list
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Tor Browser Launcher
+sudo apt install -y torbrowser-launcher
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Tor Browser Launcher only
+sudo apt update && sudo apt --only-upgrade install -y torbrowser-launcher
+
+clean cache:
+============
+# Remove Tor Browser local cache files
+rm -rf ~/.cache/torbrowser
+
+remove profiles:
+================
+# Remove Tor Browser user profile data and settings
+rm -rf ~/.local/share/torbrowser
+
+uninstall:
+==========
+# Remove Tor Browser Launcher and purge its configuration files
+sudo apt remove --purge -y torbrowser-launcher
+
+# Remove the Tor repository source file
+sudo rm -f /etc/apt/sources.list.d/tor.list
+
+# Remove the saved Tor signing key
+sudo rm -f /usr/share/keyrings/tor-archive-keyring.gpg
