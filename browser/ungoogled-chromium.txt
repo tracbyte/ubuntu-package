@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y curl apt-transport-https ca-certificates gnupg
+
+# Add Ungoogled Chromium signing key
+curl -sS https://download.opensuse.org/repositories/home:/justmusic2017:/ungoogled-chromium/Ubuntu_22.04/Release.key | sudo gpg --dearmor -o /usr/share/keyrings/ungoogled-chromium.gpg
+
+# Add the Ungoogled Chromium repository
+echo "deb [signed-by=/usr/share/keyrings/ungoogled-chromium.gpg] http://download.opensuse.org/repositories/home:/justmusic2017:/ungoogled-chromium/Ubuntu_22.04/ /" | sudo tee /etc/apt/sources.list.d/ungoogled-chromium.list
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Ungoogled Chromium
+sudo apt install -y ungoogled-chromium
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Ungoogled Chromium only
+sudo apt update && sudo apt --only-upgrade install -y ungoogled-chromium
+
+clean cache:
+============
+# Remove Ungoogled Chromium local cache files
+rm -rf ~/.cache/chromium
+
+remove profiles:
+================
+# Remove Ungoogled Chromium user profile data and settings
+rm -rf ~/.config/chromium
+
+uninstall:
+==========
+# Remove Ungoogled Chromium and purge its configuration files
+sudo apt remove --purge -y ungoogled-chromium
+
+# Remove the Ungoogled Chromium repository source file
+sudo rm -f /etc/apt/sources.list.d/ungoogled-chromium.list
+
+# Remove the saved Ungoogled Chromium signing key
+sudo rm -f /usr/share/keyrings/ungoogled-chromium.gpg
