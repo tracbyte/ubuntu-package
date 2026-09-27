@@ -1,0 +1,52 @@
+install:
+========
+# Update package lists and install required prerequisites
+sudo apt update && sudo apt install -y curl apt-transport-https ca-certificates gnupg
+
+# Add Mozilla's official PPA signing key
+curl -fSsL https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x0AB2103200041819 | sudo gpg --dearmor -o /usr/share/keyrings/mozilla-archive-keyring.gpg
+
+# Add the official Mozilla Team PPA repository
+echo "deb [signed-by=/usr/share/keyrings/mozilla-archive-keyring.gpg] https://ppa.launchpadcontent.net/mozillateam/ppa/ubuntu jammy main" | sudo tee /etc/apt/sources.list.d/mozilla-ppa.list
+
+# Prefer Mozilla PPA packages over default Ubuntu Snap stubs
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+' | sudo tee /etc/apt/preferences.d/mozilla-ppa
+
+# Update package lists with the new repository
+sudo apt update
+
+# Install Firefox
+sudo apt install -y firefox
+
+update:
+=======
+# Fetch latest repository indexes and upgrade Firefox only
+sudo apt update && sudo apt --only-upgrade install -y firefox
+
+clean cache:
+============
+# Remove Firefox local cache files
+rm -rf ~/.cache/mozilla/firefox
+
+remove profiles:
+================
+# Remove Firefox user profile data and settings
+rm -rf ~/.mozilla/firefox
+
+uninstall:
+==========
+# Remove Firefox and purge its configuration files
+sudo apt remove --purge -y firefox
+
+# Remove APT pinning preferences for Mozilla PPA
+sudo rm -f /etc/apt/preferences.d/mozilla-ppa
+
+# Remove the Mozilla repository source file
+sudo rm -f /etc/apt/sources.list.d/mozilla-ppa.list
+
+# Remove the saved Mozilla signing key
+sudo rm -f /usr/share/keyrings/mozilla-archive-keyring.gpg
