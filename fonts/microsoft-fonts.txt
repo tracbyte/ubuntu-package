@@ -1,0 +1,42 @@
+install:
+========
+# Update package lists, install Microsoft TrueType Core Fonts, Calibri/Cambria extraction utilities, and fontconfig
+sudo apt update && sudo apt install -y ttf-mscorefonts-installer cabextract wget fontconfig
+
+# Fetch, extract, and deploy additional Microsoft ClearType fonts (Calibri, Cambria, Candara, Consolas, Constantia, Corbel)
+mkdir -p ~/.local/share/fonts/msfonts && cd ~/.local/share/fonts/msfonts
+wget https://www.freedesktop.org/software/fontconfig/webfonts/webfonts.tar.gz
+tar -xzf webfonts.tar.gz && cabextract msfonts/*.exe
+rm -rf msfonts webfonts.tar.gz
+
+# Refresh system font cache indexes to apply installed Microsoft fonts
+fc-cache -f -v
+
+update:
+=======
+# Upgrade Microsoft core font packages and refresh font cache indexes
+sudo apt update && sudo apt install --only-upgrade -y ttf-mscorefonts-installer && fc-cache -f -v
+
+clean cache:
+============
+# Remove local user-level fontconfig cache directories
+rm -rf ~/.cache/fontconfig
+
+remove profiles:
+================
+# Remove custom user font configurations and preferences
+rm -rf ~/.config/fontconfig
+
+uninstall:
+==========
+# Remove the Microsoft TrueType Core Fonts system package
+sudo apt purge -y ttf-mscorefonts-installer
+
+# Delete manually extracted Microsoft font files
+rm -rf ~/.local/share/fonts/msfonts
+
+# Clean up leftover package dependencies
+sudo apt autoremove -y
+
+# Rebuild font cache indexes to reflect changes
+fc-cache -f -v
