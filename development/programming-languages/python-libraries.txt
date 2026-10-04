@@ -1,54 +1,66 @@
-Data Science & Machine Learning:
-================================
-# Install data science and machine learning packages
-pip install numpy pandas matplotlib seaborn scipy scikit-learn statsmodels --break-system-packages
+Data Science, Machine Learning & AI:
+====================================
+# Modern ML, Deep Learning, High-Performance Dataframes & Vector DBs
+pip install numpy pandas polars duckdb matplotlib seaborn scipy scikit-learn statsmodels xgboost lightgbm catboost torch torchvision torchaudio transformers datasets langchain openai chromadb --break-system-packages
 
-Database & ORM:
-===============
-# Install database drivers and ORM frameworks
-pip install sqlalchemy pymysql psycopg2-binary redis alembic --break-system-packages
+Database, Async & ORM:
+======================
+# Modern Async Drivers, Relational/NoSQL ORMs, Migrations & Caching
+pip install sqlalchemy sqlmodel pymysql psycopg2-binary asyncpg motor redis alembic --break-system-packages
 
-File Handling & Office:
-=======================
-# Install image and document processing libraries
-pip install pillow openpyxl python-docx PyPDF2 --break-system-packages
+File Handling & Office Documents:
+=================================
+# Image Processing, Modern PDF Manipulation & Spreadsheet Tools
+pip install pillow openpyxl python-docx pypdf pdfplumber xlsxwriter --break-system-packages
 
-Jupyter:
-========
-# Install JupyterLab and classic Notebook interfaces
-pip install jupyterlab notebook --break-system-packages
+Jupyter & Interactive Dev:
+==========================
+# Jupyter Ecosystem & Visual Debugging Tools
+pip install jupyterlab notebook ipywidgets jupyter-bokeh --break-system-packages
 
-Python Core & Utilities:
-=========================
-# Install core Python build tools and utility packages
-pip install pip setuptools wheel python-dotenv click rich pydantic --break-system-packages
+Python Core, Parsing & Utilities:
+=================================
+# Modern Data Validation, CLI Frameworks, Async Utils & Profiling
+pip install pip setuptools wheel python-dotenv click rich pydantic pydantic-settings loguru structlog tenacity tqdm --break-system-packages
 
-Testing & Code Quality:
-=======================
-# Install testing frameworks and code linters
-pip install pytest pytest-cov black flake8 pylint mypy --break-system-packages
-
-Web Development & APIs:
-================       
-# Install web frameworks and API tools
-pip install flask fastapi uvicorn django starlette pydantic-settings --break-system-packages
-
-Web Scraping & Automation:
+Testing, QA & Code Quality:
 ===========================
-# Install web scraping and automation libraries
-pip install requests httpx aiohttp beautifulsoup4 lxml selenium playwright --break-system-packages
+# Modern Test Runners, Type Checking, Linters & Formatters
+pip install pytest pytest-cov pytest-asyncio ruff black flake8 pylint mypy --break-system-packages
 
-yt-dlp:
-=======
-# Install media downloading tool
-pip install yt-dlp --break-system-packages
+Web Development, Async & APIs:
+==============================
+# Modern Async Web Frameworks, Microframeworks & ASGI Servers
+pip install flask fastapi uvicorn[standard] django starlette gunicorn hypercorn --break-system-packages
 
-Oneliner Install (Ubuntu Bash):
-===============================
-# Install all primary Python libraries at once
-pip install --upgrade pip setuptools wheel --break-system-packages && pip install numpy pandas matplotlib seaborn scipy scikit-learn statsmodels requests httpx aiohttp beautifulsoup4 lxml selenium playwright flask fastapi uvicorn django starlette pydantic-settings sqlalchemy pymysql psycopg2-binary redis alembic pillow openpyxl python-docx PyPDF2 pytest pytest-cov black flake8 pylint mypy yt-dlp python-dotenv click rich pydantic --break-system-packages
+Web Scraping, Automation & Browser Engine:
+==========================================
+# Async HTTP Clients, Modern Scraping Tools & Automated Browsers
+pip install requests httpx aiohttp beautifulsoup4 lxml selenium playwright mechanicalsoup --break-system-packages
+
+Media & Downloads:
+==================
+# Video/Audio Extraction & Processing Tools
+pip install yt-dlp imageio ffmpeg-python --break-system-packages
+
+Task Queues & Background Workers:
+=================================
+# Distributed Task Engines & Schedulers
+pip install celery redis rq apscheduler --break-system-packages
+
+Security, Auth & Cryptography:
+==============================
+# Token Auth, Password Hashing & Encryption
+pip install cryptography pyjwt passlib[bcrypt] python-jose --break-system-packages
+
+
+Ultimate Oneliner Install (Ubuntu Bash):
+========================================
+# Update build tools first, then install the complete Python stack
+pip install --upgrade pip setuptools wheel --break-system-packages && pip install numpy pandas polars duckdb matplotlib seaborn scipy scikit-learn statsmodels xgboost lightgbm catboost torch torchvision torchaudio transformers datasets langchain openai chromadb sqlalchemy sqlmodel pymysql psycopg2-binary asyncpg motor redis alembic pillow openpyxl python-docx pypdf pdfplumber xlsxwriter jupyterlab notebook ipywidgets requests httpx aiohttp beautifulsoup4 lxml selenium playwright flask fastapi uvicorn[standard] django starlette gunicorn cryptography pyjwt passlib[bcrypt] celery rq apscheduler pytest pytest-cov pytest-asyncio ruff mypy black flake8 pylint yt-dlp python-dotenv click rich pydantic pydantic-settings loguru structlog tenacity tqdm --break-system-packages
+
 
 Global Uninstall (Ubuntu Bash):
 ===============================
-# Uninstall all user-installed Python pip libraries
-pip freeze | xargs pip uninstall -y
+# Safety-checked uninstall command for Debian/Ubuntu system packages
+pip freeze | grep -v "^-e" | xargs pip uninstall -y --break-system-packages
