@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install build-essential -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade build-essential -y
+
+uninstall:
+==========
+sudo apt remove --purge build-essential -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/build-essential ~/.cache/build-essential ~/.local/share/build-essential

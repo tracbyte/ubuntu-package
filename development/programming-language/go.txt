@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install golang-go -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade golang-go -y
+
+uninstall:
+==========
+sudo apt remove --purge golang-go -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/golang-go ~/.cache/golang-go ~/.local/share/golang-go

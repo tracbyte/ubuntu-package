@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install ruby-full -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade ruby-full -y
+
+uninstall:
+==========
+sudo apt remove --purge ruby-full -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/ruby-full ~/.cache/ruby-full ~/.local/share/ruby-full

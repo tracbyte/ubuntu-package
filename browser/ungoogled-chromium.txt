@@ -1,0 +1,19 @@
+install:
+========
+flatpak install flathub com.github.Eloston.UngoogledChromium -y
+
+upgrade:
+========
+flatpak update com.github.Eloston.UngoogledChromium
+
+uninstall:
+==========
+flatpak uninstall --delete-data com.github.Eloston.UngoogledChromium -y
+
+clean cache:
+============
+flatpak cleanup
+
+remove profiles:
+================
+rm -rf ~/.var/app/com.github.Eloston.UngoogledChromium

@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install brave-browser -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade brave-browser -y
+
+uninstall:
+==========
+sudo apt remove --purge brave-browser -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/brave-browser ~/.cache/brave-browser ~/.local/share/brave-browser

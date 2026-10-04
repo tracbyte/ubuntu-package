@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install pycharm-professional --classic
+
+upgrade:
+========
+sudo snap refresh pycharm-professional
+
+uninstall:
+==========
+sudo snap remove --purge pycharm-professional
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/pycharm-professional ~/.config/pycharm-professional

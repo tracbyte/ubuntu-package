@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install vivaldi-stable -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade vivaldi-stable -y
+
+uninstall:
+==========
+sudo apt remove --purge vivaldi-stable -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/vivaldi-stable ~/.cache/vivaldi-stable ~/.local/share/vivaldi-stable

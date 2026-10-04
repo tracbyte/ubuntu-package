@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install redis-server -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade redis-server -y
+
+uninstall:
+==========
+sudo apt remove --purge redis-server -y && sudo apt autoremove -y
+
+clean cache:
+============
+sudo apt clean && sudo rm -rf /var/log/redis*
+
+remove profiles:
+================
+sudo rm -rf /etc/redis /var/lib/redis ~/.rediscli_history

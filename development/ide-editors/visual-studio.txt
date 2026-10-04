@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install code --classic
+
+upgrade:
+========
+sudo snap refresh code
+
+uninstall:
+==========
+sudo snap remove --purge code
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/code ~/.config/code

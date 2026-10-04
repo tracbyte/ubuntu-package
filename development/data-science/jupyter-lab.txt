@@ -1,0 +1,19 @@
+install:
+========
+pip install jupyterlab
+
+upgrade:
+========
+pip install --upgrade jupyterlab
+
+uninstall:
+==========
+pip uninstall jupyterlab -y
+
+clean cache:
+============
+pip cache purge
+
+remove profiles:
+================
+rm -rf ~/.jupyter ~/.local/share/jupyter

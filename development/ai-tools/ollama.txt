@@ -1,0 +1,20 @@
+install:
+========
+curl -fsSL https://ollama.com/install.sh | sh
+
+upgrade:
+========
+curl -fsSL https://ollama.com/install.sh | sh
+
+uninstall:
+==========
+sudo systemctl stop ollama
+sudo rm -rf /usr/local/bin/ollama /usr/share/ollama
+
+clean cache:
+============
+rm -rf ~/.ollama/history
+
+remove profiles:
+================
+rm -rf ~/.ollama

@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install sqlite3 libsqlite3-dev -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade sqlite3 libsqlite3-dev -y
+
+uninstall:
+==========
+sudo apt remove --purge sqlite3 libsqlite3-dev -y && sudo apt autoremove -y
+
+clean cache:
+============
+sudo apt clean
+
+remove profiles:
+================
+rm -f ~/.sqlite_history

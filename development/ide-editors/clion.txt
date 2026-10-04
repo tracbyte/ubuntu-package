@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install clion --classic
+
+upgrade:
+========
+sudo snap refresh clion
+
+uninstall:
+==========
+sudo snap remove --purge clion
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/clion ~/.config/clion

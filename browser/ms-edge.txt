@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install microsoft-edge-stable -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade microsoft-edge-stable -y
+
+uninstall:
+==========
+sudo apt remove --purge microsoft-edge-stable -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/microsoft-edge-stable ~/.cache/microsoft-edge-stable ~/.local/share/microsoft-edge-stable

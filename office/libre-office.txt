@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install libreoffice -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade libreoffice -y
+
+uninstall:
+==========
+sudo apt remove --purge libreoffice -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/libreoffice ~/.cache/libreoffice ~/.local/share/libreoffice

@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install ttf-mscorefonts-installer cabextract wget fontconfig -y && mkdir -p ~/.local/share/fonts/msfonts && cd ~/.local/share/fonts/msfonts && wget -q https://www.freedesktop.org/software/fontconfig/webfonts/webfonts.tar.gz && tar -xzf webfonts.tar.gz && cabextract -q msfonts/*.exe && rm -rf msfonts webfonts.tar.gz && fc-cache -f -v
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade ttf-mscorefonts-installer cabextract fontconfig -y && fc-cache -f -v
+
+uninstall:
+==========
+sudo apt remove --purge ttf-mscorefonts-installer cabextract fontconfig -y && rm -rf ~/.local/share/fonts/msfonts && fc-cache -f -v
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y && rm -rf ~/.cache/fontconfig
+
+remove profiles:
+================
+rm -rf ~/.config/fontconfig

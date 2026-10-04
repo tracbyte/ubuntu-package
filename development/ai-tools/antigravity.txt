@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install antigravity
+
+upgrade:
+========
+sudo snap refresh antigravity
+
+uninstall:
+==========
+sudo snap remove --purge antigravity
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/antigravity ~/.config/antigravity

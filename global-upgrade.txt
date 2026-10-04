@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt upgrade -y
+
+upgrade:
+========
+sudo apt update && sudo apt dist-upgrade -y
+
+uninstall:
+==========
+# System upgrade package; uninstallation not applicable.
+
+clean cache:
+============
+sudo apt clean && sudo apt autoclean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.cache/*

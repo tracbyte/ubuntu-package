@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install gh -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade gh -y
+
+uninstall:
+==========
+sudo apt remove --purge gh -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/gh ~/.cache/gh ~/.local/share/gh

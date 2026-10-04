@@ -1,0 +1,19 @@
+install:
+========
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+upgrade:
+========
+rustup update
+
+uninstall:
+==========
+rustup self uninstall -y
+
+clean cache:
+============
+cargo clean
+
+remove profiles:
+================
+rm -rf ~/.cargo ~/.rustup

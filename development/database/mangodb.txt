@@ -1,0 +1,19 @@
+install:
+========
+curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb-server-7.0.gpg && echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list && sudo apt update && sudo apt install mongodb-org -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade mongodb-org -y
+
+uninstall:
+==========
+sudo apt remove --purge mongodb-org* -y && sudo apt autoremove -y
+
+clean cache:
+============
+sudo apt clean && sudo rm -rf /var/log/mongodb
+
+remove profiles:
+================
+sudo rm -rf /var/lib/mongodb /etc/mongod.conf

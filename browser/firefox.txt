@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install firefox
+
+upgrade:
+========
+sudo snap refresh firefox
+
+uninstall:
+==========
+sudo snap remove --purge firefox
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/firefox ~/.config/firefox

@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install wine -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade wine -y
+
+uninstall:
+==========
+sudo apt remove --purge wine -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/wine ~/.cache/wine ~/.local/share/wine

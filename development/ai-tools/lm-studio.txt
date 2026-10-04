@@ -1,0 +1,20 @@
+install:
+========
+# Download LM Studio AppImage
+chmod +x LM_Studio*.AppImage
+
+upgrade:
+========
+# Download newest LM Studio AppImage
+
+uninstall:
+==========
+rm -f LM_Studio*.AppImage
+
+clean cache:
+============
+rm -rf ~/.cache/lm-studio
+
+remove profiles:
+================
+rm -rf ~/.config/lm-studio ~/.cache/lm-studio

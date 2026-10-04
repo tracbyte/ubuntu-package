@@ -1,0 +1,20 @@
+install:
+========
+# Download Cursor AppImage
+chmod +x cursor*.AppImage
+
+upgrade:
+========
+# Download newest Cursor AppImage
+
+uninstall:
+==========
+rm -f cursor*.AppImage
+
+clean cache:
+============
+rm -rf ~/.cache/Cursor
+
+remove profiles:
+================
+rm -rf ~/.config/Cursor ~/.cursor

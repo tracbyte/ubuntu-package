@@ -1,0 +1,70 @@
+Data Science, Machine Learning & AI:
+====================================
+# Modern ML, Deep Learning, High-Performance Dataframes & Vector DBs
+pip3 install numpy pandas polars duckdb matplotlib seaborn scipy scikit-learn statsmodels xgboost lightgbm catboost torch torchvision torchaudio transformers datasets langchain openai chromadb
+
+Database, Async & ORM:
+======================
+# Modern Async Drivers, Relational/NoSQL ORMs, Migrations & Caching
+pip3 install sqlalchemy sqlmodel pymysql psycopg2-binary asyncpg motor redis alembic
+
+File Handling & Office Documents:
+=================================
+# Image Processing, Modern PDF Manipulation & Spreadsheet Tools
+pip3 install pillow openpyxl python-docx pypdf pdfplumber xlsxwriter
+
+Jupyter & Interactive Dev:
+==========================
+# Jupyter Ecosystem & Visual Debugging Tools
+pip3 install jupyterlab notebook ipywidgets jupyter-bokeh
+
+Python Core, Parsing & Utilities:
+=================================
+# Modern Data Validation, CLI Frameworks, Async Utils & Profiling
+pip3 install pip setuptools wheel python-dotenv click rich pydantic pydantic-settings loguru structlog tenacity tqdm
+
+Testing, QA & Code Quality:
+===========================
+# Modern Test Runners, Type Checking, Linters & Formatters
+pip3 install pytest pytest-cov pytest-asyncio ruff black flake8 pylint mypy
+
+Web Development, Async & APIs:
+==============================
+# Modern Async Web Frameworks, Microframeworks & ASGI Servers
+pip3 install flask fastapi uvicorn[standard] django starlette gunicorn hypercorn
+
+Web Scraping, Automation & Browser Engine:
+==========================================
+# Async HTTP Clients, Modern Scraping Tools & Automated Browsers
+pip3 install requests httpx aiohttp beautifulsoup4 lxml selenium playwright mechanicalsoup
+playwright install-deps
+
+Media & Downloads:
+==================
+# Video/Audio Extraction & Processing Tools
+pip3 install yt-dlp imageio ffmpeg-python
+
+Task Queues & Background Workers:
+=================================
+# Distributed Task Engines & Schedulers
+pip3 install celery redis rq apscheduler
+
+Security, Auth & Cryptography:
+==============================
+# Token Auth, Password Hashing & Encryption
+pip3 install cryptography pyjwt passlib[bcrypt] python-jose
+
+
+Ultimate Oneliner Install (Ubuntu Bash):
+========================================
+# Update system build headers, upgrade pip build tools, install python packages, and fetch browser dependencies
+sudo apt update && sudo apt install -y python3-pip python3-dev python3-venv build-essential libpq-dev libffi-dev ffmpeg && python3 -m pip install --upgrade pip setuptools wheel --break-system-packages && pip3 install numpy pandas polars duckdb matplotlib seaborn scipy scikit-learn statsmodels xgboost lightgbm catboost torch torchvision torchaudio transformers datasets langchain openai chromadb sqlalchemy sqlmodel pymysql psycopg2-binary asyncpg motor redis alembic pillow openpyxl python-docx pypdf pdfplumber xlsxwriter jupyterlab notebook ipywidgets jupyter-bokeh python-dotenv click rich pydantic pydantic-settings loguru structlog tenacity tqdm pytest pytest-cov pytest-asyncio ruff black flake8 pylint mypy flask fastapi uvicorn[standard] django starlette gunicorn hypercorn requests httpx aiohttp beautifulsoup4 lxml selenium playwright mechanicalsoup yt-dlp imageio ffmpeg-python celery redis rq apscheduler cryptography pyjwt passlib[bcrypt] python-jose --break-system-packages && playwright install-deps
+
+
+Global Uninstall (Ubuntu Bash):
+===============================
+# Option 1: Native Bash pipe to uninstall all non-stdlib pip packages
+pip3 freeze | xargs pip3 uninstall -y
+
+# Option 2: Using pip's built-in purge command (pip 25.0+)
+pip3 purge -y

@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install python3 -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade python3 -y
+
+uninstall:
+==========
+sudo apt remove --purge python3 -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/python3 ~/.cache/python3 ~/.local/share/python3

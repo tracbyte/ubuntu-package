@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install palemoon -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade palemoon -y
+
+uninstall:
+==========
+sudo apt remove --purge palemoon -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/palemoon ~/.cache/palemoon ~/.local/share/palemoon

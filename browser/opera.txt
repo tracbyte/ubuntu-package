@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install opera
+
+upgrade:
+========
+sudo snap refresh opera
+
+uninstall:
+==========
+sudo snap remove --purge opera
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/opera ~/.config/opera

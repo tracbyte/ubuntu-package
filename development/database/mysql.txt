@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install mysql-server mysql-client -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade mysql-server mysql-client -y
+
+uninstall:
+==========
+sudo apt remove --purge mysql-server mysql-client mysql-common -y && sudo apt autoremove -y
+
+clean cache:
+============
+sudo apt clean && sudo rm -rf /var/log/mysql*
+
+remove profiles:
+================
+sudo rm -rf /etc/mysql /var/lib/mysql ~/.mysql_history

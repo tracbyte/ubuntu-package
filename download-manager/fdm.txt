@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install freedownloadmanager -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade freedownloadmanager -y
+
+uninstall:
+==========
+sudo apt remove --purge freedownloadmanager -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/freedownloadmanager ~/.cache/freedownloadmanager ~/.local/share/freedownloadmanager

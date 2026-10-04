@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install postgresql postgresql-contrib libpq-dev -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade postgresql postgresql-contrib -y
+
+uninstall:
+==========
+sudo apt remove --purge postgresql postgresql-contrib -y && sudo apt autoremove -y
+
+clean cache:
+============
+sudo apt clean && sudo rm -rf /var/log/postgresql*
+
+remove profiles:
+================
+sudo rm -rf /etc/postgresql /var/lib/postgresql ~/.psql_history

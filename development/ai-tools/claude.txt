@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install claude-desktop
+
+upgrade:
+========
+sudo snap refresh claude-desktop
+
+uninstall:
+==========
+sudo snap remove --purge claude-desktop
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/claude-desktop ~/.config/claude-desktop

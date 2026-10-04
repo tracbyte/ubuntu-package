@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install default-jdk -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade default-jdk -y
+
+uninstall:
+==========
+sudo apt remove --purge default-jdk -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/default-jdk ~/.cache/default-jdk ~/.local/share/default-jdk

@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install recordly
+
+upgrade:
+========
+sudo snap refresh recordly
+
+uninstall:
+==========
+sudo snap remove --purge recordly
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/recordly ~/.config/recordly

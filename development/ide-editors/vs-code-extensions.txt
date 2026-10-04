@@ -1,0 +1,19 @@
+install:
+========
+code --install-extension ms-python.python
+
+upgrade:
+========
+# Automatic via VS Code
+
+uninstall:
+==========
+code --uninstall-extension ms-python.python
+
+clean cache:
+============
+rm -rf ~/.config/Code/CachedData
+
+remove profiles:
+================
+rm -rf ~/.vscode/extensions

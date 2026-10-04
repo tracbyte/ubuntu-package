@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install pycharm-community --classic
+
+upgrade:
+========
+sudo snap refresh pycharm-community
+
+uninstall:
+==========
+sudo snap remove --purge pycharm-community
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/pycharm-community ~/.config/pycharm-community

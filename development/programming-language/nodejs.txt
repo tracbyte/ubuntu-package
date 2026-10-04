@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install nodejs -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade nodejs -y
+
+uninstall:
+==========
+sudo apt remove --purge nodejs -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/nodejs ~/.cache/nodejs ~/.local/share/nodejs

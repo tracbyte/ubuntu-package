@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install google-chrome-stable -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade google-chrome-stable -y
+
+uninstall:
+==========
+sudo apt remove --purge google-chrome-stable -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/google-chrome-stable ~/.cache/google-chrome-stable ~/.local/share/google-chrome-stable

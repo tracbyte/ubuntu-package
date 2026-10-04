@@ -1,0 +1,19 @@
+install:
+========
+sudo apt update && sudo apt install torbrowser-launcher -y
+
+upgrade:
+========
+sudo apt update && sudo apt install --only-upgrade torbrowser-launcher -y
+
+uninstall:
+==========
+sudo apt remove --purge torbrowser-launcher -y
+
+clean cache:
+============
+sudo apt clean && sudo apt autoremove -y
+
+remove profiles:
+================
+rm -rf ~/.config/torbrowser-launcher ~/.cache/torbrowser-launcher ~/.local/share/torbrowser-launcher

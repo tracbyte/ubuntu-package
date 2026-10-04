@@ -1,0 +1,19 @@
+install:
+========
+sudo npm install -g typescript
+
+upgrade:
+========
+sudo npm update -g typescript
+
+uninstall:
+==========
+sudo npm uninstall -g typescript
+
+clean cache:
+============
+npm cache clean --force
+
+remove profiles:
+================
+rm -rf ~/.npm

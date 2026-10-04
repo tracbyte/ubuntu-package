@@ -1,0 +1,19 @@
+install:
+========
+sudo snap install chatgpt-desktop
+
+upgrade:
+========
+sudo snap refresh chatgpt-desktop
+
+uninstall:
+==========
+sudo snap remove --purge chatgpt-desktop
+
+clean cache:
+============
+sudo rm -rf /var/lib/snapd/cache/* ~/.cache/snapd/
+
+remove profiles:
+================
+rm -rf ~/snap/chatgpt-desktop ~/.config/chatgpt-desktop
